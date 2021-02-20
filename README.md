@@ -157,3 +157,4 @@ PS: 如果重启一次还是提示 key is invaild, 请再重启一次试试 ！�
 《IntelliJ IDEA 如何关闭更新提示？》
 
 IDEA 2020.3.2 成功激活到2099年了
+https://www.exception.site/essay/how-to-free-use-idea-202021-by-resigter-code#%E7%AC%AC%E5%85%AD%E6%AD%A5-%E6%A3%80%E6%9F%A5%E6%8F%92%E4%BB%B6%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F%EF%BC%88%E5%BB%BA%E8%AE%AE%EF%BC%89
