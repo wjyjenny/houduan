@@ -1,4 +1,5 @@
 package com.company;
+//用IDEA编译
 import java.util.*;
 public class VectorDemo1 {
     public static void main(String[] args){
