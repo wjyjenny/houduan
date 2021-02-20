@@ -1,0 +1,36 @@
+package com.company;
+import java.util.*;
+public class StackDemo {
+    static void showpush(Stack<Integer> st, int a) {
+        st.push(new Integer(a));//把项a压入堆栈顶部
+        System.out.println("push(" + a + ")");
+        System.out.println("stack: " + st);//st按次序加入a的值：stack: [42, 66, 99]，后压入的值在后面
+    }
+
+    static void showpop(Stack<Integer> st) {
+        System.out.print("pop -> ");
+        Integer a = (Integer) st.pop();//移除堆栈st顶部的对象，并作为此函数的值a返回该对象。
+        System.out.println(a);
+        System.out.println("stack: " + st);//st按次序压出a的值：stack: [42, 66, 99]，后压入的值先压出
+    }
+
+    public static void main(String args[]) {
+        //栈Stack是Vector的一个子类，它实现了一个标准的后进先出的栈。
+        //堆栈除了包括由Vector定义的所有方法，也定义了自己的一些方法。
+        Stack<Integer> st = new Stack<Integer>();//堆栈只定义了默认构造函数，用来创建一个空栈。即stack: []
+        System.out.println("stack: " + st);
+        showpush(st, 42);//把项a=42压入堆栈st顶部，调用showpush(st,a)函数
+        showpush(st, 66);//把项a=66压入堆栈st顶部
+        showpush(st, 99);//把项a=99压入堆栈st顶部
+        showpop(st);//移除堆栈st顶部的对象，并作为此函数的值a返回该对象。压出99
+        showpop(st);//压出66
+        showpop(st);//压出42
+        /*Catch 语句包含要捕获异常类型的声明。当保护代码块中发生一个异常时，try 后面的 catch 块就会被检查。
+           如果发生的异常包含在 catch 块中，异常会被传递到该 catch 块，这和传递一个参数到方法是一样。*/
+        try {
+            showpop(st);//当st堆栈中没有东西可以被移除的时候，那么为了保护st堆栈，执行catch中的语句
+        } catch (EmptyStackException e) {
+            System.out.println("empty stack");
+        }
+    }
+}
