@@ -1,0 +1,43 @@
+package com.company;
+import java.util.*;
+public class VectorDemo1 {
+    public static void main(String[] args){
+        // initial size is 3, increment is 2
+        Vector v = new Vector(3, 2);//指定大小的向量为3，并且增量即每次增加的元素数目为2。
+        System.out.println("Initial size: " + v.size());//返回此向量中的组件数为0，即获得Vector中已有元素的个数为0
+        System.out.println("Initial capacity: " +
+                v.capacity());//返回此向量的当前容量为3，初始设定的容量为3
+        v.addElement(new Integer(1));//将指定的组件添加到此向量的末尾，将其大小增加 1。容量为3
+        v.addElement(new Integer(2));//容量为3
+        v.addElement(new Integer(3));//容量为3
+        v.addElement(new Integer(4));//组件添加到此向量的末尾，将其大小增加 1。增量即每次增加的元素数目为2，所以容量为5
+        System.out.println("Capacity after four additions: " +
+                v.capacity());//容量为5
+
+        v.addElement(new Double(5.45));//组件添加到此向量的末尾，将其大小增加 1。前面只用了4个容量，所以容量为5
+        System.out.println("Current capacity: " +
+                v.capacity());
+        v.addElement(new Double(6.08));//组件添加到此向量的末尾，将其大小增加 1。增量即每次增加的元素数目为2，所以容量为7
+        v.addElement(new Integer(7));//前面不包括该条只用了6个容量，所以还是容量7
+        System.out.println("Current capacity: " +
+                v.capacity());//容量7
+        v.addElement(new Float(9.4));//前面不包括该条用了7个容量，所以每次增加的元素数目为2，所以容量为9
+        v.addElement(new Integer(10));//容量9
+        System.out.println("Current capacity: " +
+                v.capacity());//容量9
+        v.addElement(new Integer(11));//容量11
+        v.addElement(new Integer(12));//容量11
+        System.out.println("First element: " +
+                (Integer)v.firstElement());//输出第一给元素的整形，该元素为1
+        System.out.println("Last element: " +
+                (Integer)v.lastElement());//输出最后一个元素的整形，该元素为12
+        if(v.contains(new Integer(3)))//如果此向量包含指定的元素3，则返回 true。
+            System.out.println("Vector contains 3.");
+        // enumerate the elements in the vector.
+        Enumeration vEnum = v.elements();//新建一个枚举的库vEum,包含有用Vector新建的动态数组v中的所有元素
+        System.out.println("\nElements in vector:");
+        while(vEnum.hasMoreElements())//当vEum的枚举class里面还有元素的时候
+            System.out.print(vEnum.nextElement() + " ");//将vEum枚举中的下一个元素进行输出
+        System.out.println();
+    }
+}
