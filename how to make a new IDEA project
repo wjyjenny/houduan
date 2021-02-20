@@ -1,0 +1,35 @@
+**IDEA 如何新建 Java 项目 (图文讲解, 良心教程)**
+这篇文章中，小哈将手摸手教大家如何通过 IDEA 新建一个 Hello World Java 项目。废话不多说，咱们开始吧！
+***
+第一步: 打开 IDEA***
+打开 IDEA 后，我们可以通过两种方式来新建一个 Java 项目：
+
+***第一种新建 Java 项目方式***
+IDEA 第一种新建 Java 项目方式
+
+***第二种新建 Java 项目方式***
+IDEA 第二种新建 Java 项目方式
+
+开始新建 Java 项目
+开始新建 Java 项目
+
+①：选择 Java 类型的项目;
+②：选择 JDK 版本， 小哈这里选择的是 1.8 版本；
+③: 点击 Next, 进入下一步；
+选择模板
+勾选通过模板来新建 Java 项目，点击下一步:
+
+通过模板来新建 Java 项目
+
+命名项目名称
+命名为 HelloWorld, 点击完成 Finish:
+
+命名 Java 项目名称
+
+输出 Hello World
+在 main 方法中添加代码，控制台输出 Hello World.
+
+System.out.println("Hello World.");
+输出 Hello World
+
+编码完成后，我们点击右上角绿色运行按钮，就可以查看控制台输出辣 ~
