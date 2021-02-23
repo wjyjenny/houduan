@@ -1,0 +1,33 @@
+package com.company;
+//Java ArrayList contains() 方法
+import java.util.ArrayList;
+public class RunobTest1 {
+    public static void main(String[] args){
+        //创建一个String数组
+        ArrayList<String> sites = new ArrayList<>();
+        sites.add("Google");
+        sites.add("Runoob");
+        sites.add("Taobao");
+        System.out.println("网站列表："+sites);
+        //检查Runoob是否在这个数组中
+        System.out.println("Runoob是否存在于arraylist:");
+        System.out.println(sites.contains("Runoob"));//contains() 方法检查动态数组中是否存在 Runoob，由于存在 Runoob，因此该方法返回 true
+        //检查Weibo是否在这个数组中
+        System.out.println("Weibo是否存在于arraylist:");
+        System.out.println(sites.contains("Weibo"));
+        //注意：该 contains() 方法内部其实使用 equals() 方法来查找元素。如果指定的元素与数组中的元素有匹配到，则该方法返回 true。
+        //创建一个int数组
+        ArrayList<Integer> numbers = new ArrayList<>();
+        //往数组中插入元素
+        numbers.add(2);
+        numbers.add(3);
+        numbers.add(5);
+        System.out.println("Number ArrayList:"+numbers);
+        //检查3是否在这个数组中
+        System.out.println("3是否在ayyaylist:");
+        System.out.println(numbers.contains(3));
+        //检查1是否在这个数组中
+        System.out.println("1是否在arraylist:");
+        System.out.println(numbers.contains(1));
+    }
+}
