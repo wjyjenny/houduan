@@ -1,0 +1,54 @@
+package com.company;
+//Java ArrayList set() 方法
+//set() 方法用于替换动态数组中指定索引的元素。
+//set() 方法的语法为：
+//arraylist.set(int index, E element)
+//注：arraylist 是 ArrayList 类的一个对象。
+import java.util.ArrayList;
+public class RunobTest9 {
+    public static void main(String[] args){
+        //创建一个动态数组
+        ArrayList<String> sites = new ArrayList<>();
+        sites.add("Google");
+        sites.add("Runoob");
+        sites.add("Taobao");
+        System.out.println("网站列表："+sites);
+        //索引2的元素被替换
+        String element = sites.set(2,"Wiki");//element为原先索引为2的元素
+        System.out.println("替换后："+sites);
+        System.out.println("被替换的元素："+element);
+        //ArrayList set() 与 add()方法
+        //add() 和 set() 方法的语法看起来非常相似。
+        //// add() 的语法
+        //arraylist.add(int index, E element)
+        //// set() 的语法
+        //arraylist.set(int index, E element)
+        //这两种方法都将新元素添加到数组中。
+        //但是，它们之间有很大的不同:
+        //set() 方法在指定位置对元素进行更新。
+        //add() 方法将元素插入到指定位置的动态数组中。
+        System.out.println();
+        // 创建一个动态数组
+        ArrayList<String> sites1 = new ArrayList<>();
+
+        sites1.add("Google");
+        sites1.add("Runoob");
+        sites1.add("Taobao");
+        System.out.println("网站列表: " + sites1);
+
+        // 创建另一个 sites2 动态数组
+        ArrayList<String> sites2 = new ArrayList<>();
+
+        // 将 sites 中的数组元素添加到 sites2
+        sites2.addAll(sites1);
+        System.out.println("ArrayList: " + sites1);
+
+        // 使用set():替换
+        sites1.set(1, "Wiki");
+        System.out.println("ArrayList 使用 set() 后: " + sites1);
+
+        //使用 add()：增加
+        sites2.add(1, "Wiki");
+        System.out.println("ArrayList 使用 add() 后: " + sites2);
+    }
+}
