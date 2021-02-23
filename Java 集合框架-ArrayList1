@@ -1,0 +1,24 @@
+package com.company;
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class RunoobTest1 {
+    public static void main(String[] args){
+        //ArrayList<Integer> li=new Arraylist<>();     // 存放整数元素
+        //ArrayList<Character> li=new Arraylist<>();   // 存放字符元素
+        ArrayList<Integer> myNumbers = new ArrayList<Integer>();
+        myNumbers.add(10);
+        myNumbers.add(15);
+        myNumbers.add(20);
+        myNumbers.add(25);
+        for(int i:myNumbers){
+            System.out.println(i);
+        }
+        Collections.sort(myNumbers);//数字排序(从小到大)
+        for (int i:myNumbers){
+            System.out.println(i);
+        }
+    }
+
+
+}
