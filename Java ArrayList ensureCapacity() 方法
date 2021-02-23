@@ -1,0 +1,29 @@
+package com.company;
+//Java ArrayList ensureCapacity() 方法
+//ensureCapacity() 方法用于设置具有指定容量大小的动态数组。
+//ensureCapacity() 方法的语法为：
+//arraylist.ensureCapacity(int minCapacity)
+//注：arraylist 是 ArrayList 类的一个对象。
+//minCapacity - 动态数组的容量
+import java.util.ArrayList;
+public class RunobTest13 {
+    public static void main(String[] args){
+
+        // 创建一个动态数组
+        ArrayList<String> sites = new ArrayList<>();
+
+        // 设置 arraylist的容量大小
+        sites.ensureCapacity(3);// ensureCapacity() 方法将动态数组大小调整为可以存放 3 个元素。
+
+        sites.add("Google");
+        sites.add("Runoob");
+        sites.add("Taobao");
+        System.out.println("网站列表: " + sites);
+
+        //Java 中的 ArrayList 可动态调整大小。也就是说，如果我们在 arraylist 中添加 3 个以上的元素，它将自动调整自身大小
+        // 添加第四个元素
+        sites.add("Wiki");
+
+        System.out.println("网站列表: " + sites);
+    }
+}

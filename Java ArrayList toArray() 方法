@@ -1,0 +1,62 @@
+package com.company;
+//Java ArrayList toArray() 方法
+//toArray() 方法将 Arraylist 对象转换为数组。
+//toArray() 方法的语法为：
+//arraylist.toArray(T[] arr)
+//注：arraylist 是 ArrayList 类的一个对象。
+//T [] arr（可选参数）- 用于存储数组元素的数组
+//注意：这里 T 指的是数组的类型。
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Iterator;//使用迭代器
+public class RunobTest11 {
+    public static void main(String[] args){
+        // 创建一个动态数组
+        ArrayList<String> sites = new ArrayList<>();
+
+        sites.add("Runoob");
+        sites.add("Google");
+        sites.add("Wiki");
+        sites.add("Taobao");
+        System.out.println("网站列表: " + sites);
+
+        // 创建一个新的 String 类型的数组
+        // 1---数组长度和 ArrayList 长度一样；把链表变为数组相关的内容进行遍历
+        String[] arr = new String[sites.size()];
+        //将ArrayList对象sites转换成数组arr
+        sites.toArray(arr);
+        //输出所有数组的元素
+        System.out.println("Array:");
+        for (String item:arr){
+            System.out.println(item+",");
+        }
+        System.out.println();
+
+        //2---没有使用toArray()方法；使用 For-Each 遍历 List
+        System.out.println("Array:");
+        for (String item1:sites){
+            System.out.println(item1+",");
+        }
+        System.out.println();
+
+        // 3---将 ArrayList 对象转换成数组
+        // 该方法没有参数
+        Object[] obj = sites.toArray();
+
+        // 输出数组中所有的元素
+        System.out.println("Array: ");
+        for(Object item2 : obj) {
+            System.out.println(item2+", ");
+        }
+        System.out.println();
+        //注意：建议使用带参数的 toArray() 方法。
+
+        //4---使用迭代器进行相关遍历
+        System.out.println("Array: ");
+        Iterator<String> ite=sites.iterator();
+        while(ite.hasNext())//判断下一个元素之后有值
+        {
+            System.out.println(ite.next());
+        }
+    }
+}

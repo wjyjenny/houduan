@@ -1,0 +1,26 @@
+package com.company;
+//Java ArrayList toString() 方法
+//toString() 方法将 Arraylist 对象转换为字符串。
+//toString() 方法的语法为：
+//arraylist.toString()
+//注：arraylist 是 ArrayList 类的一个对象。
+import java.util.ArrayList;
+import java.util.Comparator;
+public class RunobTest12 {
+    public static void main(String[] args){
+
+        // 创建一个动态数组
+        ArrayList<String> sites = new ArrayList<>();
+
+        sites.add("Runoob");
+        sites.add("Google");
+        sites.add("Wiki");
+        sites.add("Taobao");
+        System.out.println("网站列表: " + sites);
+
+        // 将ArrayList转换为String类型
+        String list = sites.toString();//该方法将整个 arraylist 转换为一个 String 类型。
+        //注意：ArrayList 类没有它自己的 toString() 方法，它重写了 Object 类的 toString() 方法。
+        System.out.println("String: " + list);
+    }
+}
