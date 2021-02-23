@@ -1,0 +1,39 @@
+package com.company;
+//Java ArrayList subList() 方法
+//subList() 方法用于截取并返回动态数组中的一部分。
+//subList() 方法的语法为：
+//arraylist.subList(int fromIndex, int toIndex)
+//注：arraylist 是 ArrayList 类的一个对象。
+//fromIndex - 截取元素的起始位置，包含该索引位置元素
+//toIndex - 截取元素的结束位置，不包含该索引位置元素
+import java.util.ArrayList;
+public class RunobTest8 {
+    public static void main(String[] args){
+        // 创建一个动态数组
+        ArrayList<String> sites = new ArrayList<>();
+
+        sites.add("Google");
+        sites.add("Runoob");
+        sites.add("Taobao");
+        sites.add("Wiki");
+        System.out.println("网站列表: " + sites);
+        //元素位置为1到3
+        System.out.println("SubList: "+sites.subList(1,3));
+
+        //将一个动态数组拆分成两个动态数组：
+        //创建一个数组
+        ArrayList<Integer> ages = new ArrayList<>();
+        //往数组中添加一些元素
+        ages.add(10);
+        ages.add(12);
+        ages.add(15);
+        ages.add(19);
+        ages.add(23);
+        ages.add(34);
+        System.out.println("年龄列表："+ages);
+        //18岁以下
+        System.out.println("18岁以下："+ages.subList(0,3));
+        //18岁以上
+        System.out.println("18岁以上："+ages.subList(3,ages.size()));
+    }
+}
