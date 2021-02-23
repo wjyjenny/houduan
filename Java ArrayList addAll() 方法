@@ -1,0 +1,24 @@
+package com.company;
+//Java ArrayList addAll() 方法
+import java.util.ArrayList;
+import java.util.HashSet;
+public class RunoobTest3 {
+    public static void main(String[] args){
+        //创建一个String类型的hashset
+        HashSet<String> set = new HashSet<>();
+        //往hashset中添加元素
+        set.add("Java");
+        set.add("Python");
+        set.add("JavaScript");
+        System.out.println("HashSet: "+set);
+        //创建一个数组
+        ArrayList<String> list = new ArrayList<>();
+        //往数组中添加元素
+        list.add("English");
+        System.out.println("初始化 ArrayList: "+list);
+        //hashset中所有的元素添加至数组中
+        list.addAll(set);
+        System.out.println("更新 ArrayList: "+list);
+    }
+}
+
