@@ -1,0 +1,27 @@
+package com.company;
+import java.util.*;
+public class Main {
+//遍历 ArrayList
+    public static void main(String[] args) {
+	// write your code here
+        List<String> list = new ArrayList<String>();
+        list.add("Hello");
+        list.add("World");
+        list.add("HAHAHA");
+        //第一种遍历方法使用For-Each遍历List
+        for(String str : list){ //也可以改写 for(int i=0;i<list.size();i++) 这种形式
+            System.out.println(str);
+        }
+        //第二种遍历，将链表变为数组相关的内容进行遍历
+        String[] strArray = new String[list.size()];//创建一个新的String类型的数组，该数组的大小为list数组的大小，
+        list.toArray(strArray);//toArray将list 转换为数组，strArray为存储数组元素的数组
+        for(int i=0;i< strArray.length;i++){    //这里也可以改写为for(String str:strArray)这种形式
+            System.out.println(strArray[i]);
+        }
+        //第三种遍历 使用迭代器进行相关遍历
+        Iterator<String> ite = list.iterator();//新建一个迭代器ite,对list进行遍历元素
+        while (ite.hasNext()){//判断下一个元素之后有值
+            System.out.println(ite.next());
+        }
+    }
+}

@@ -1,0 +1,36 @@
+package com.company;
+import java.util.*;
+public class HashTableDemo {
+    public static void main(String[] args){
+        //Create a hash map
+        /*Java 2 重构的Hashtable实现了Map接口，因此，Hashtable现在集成到了集合框架中。它和HashMap类很相似，但是它支持同步。
+        像HashMap一样，Hashtable在哈希表中存储键/值对。当使用一个哈希表，要指定用作键的对象，以及要链接到该键的值。
+        然后，该键经过哈希处理，所得到的散列码被用作存储在该表中值的索引。*/
+        Hashtable balance = new Hashtable();//默认构造方法构造哈希表
+        Enumeration names;//新建一个names的枚举
+        String str;
+        double bal;
+
+        balance.put("Zara",new Double(3434.34));//将指定 key 映射到此哈希表中的指定 value。
+        balance.put("Mahnaz", new Double(123.22));
+        balance.put("Ayan", new Double(1378.00));
+        balance.put("Daisy", new Double(99.22));
+        balance.put("Qadir", new Double(-19.08));
+        //Show all balances in hash table.
+        names = balance.keys();//返回此哈希表中的键的枚举names，将哈希表中的一一对应关系存入到枚举names中
+        while (names.hasMoreElements()){//当枚举names还有元素的时候
+            str = (String) names.nextElement();//str是枚举names的下一个元素
+            System.out.println(str+":"+balance.get(str));//str为枚举中的元素+“:"+balance这个希哈表中的get方法搜索到str元素所对应的值
+            /*返回指定键所映射到的值，如果此映射不包含此键的映射，则返回 null.
+            更确切地讲，如果此映射包含满足 (key.equals(k)) 的从键 k 到值 v 的映射，则此方法返回 v；否则，返回 null。*/
+        }
+        System.out.println();
+        //Deposit 1000 into Zara's account
+        bal = ((Double)balance.get("Zara")).doubleValue();//通过balance这个希哈表中的get方法搜索到str元素所对应的值（Double)
+        //doubleValue():Returns the value of the specified number as a byte, which may involve rounding or truncation.
+        //doubleValue()用来补充说明bal为double类型，但是由于上述已经定义double bal;
+        //所以此处不能使用double bal = ((Double)balance.get("Zara"));
+        balance.put("Zara",new Double(bal+1000));//将bal+1000的值作为新的Double类型赋值给”Zara“
+        System.out.println("Zara's new balance: "+balance.get("Zara"));
+    }
+}

@@ -1,0 +1,33 @@
+package com.company;
+import java.util.*;
+public class PropDemo {
+    public static void main(String[] args){
+        Properties capitals = new Properties();
+        Set states;//Set是Collection的扩展类
+        String str;
+        capitals.put("Illinois","Springfield");
+        capitals.put("Missouri","Jefferson City");
+        capitals.put("Washington","Olymia");
+        capitals.put("California","Sacramento");
+        capitals.put("Indiana","Indianapolis");
+
+        //show all states and capitals in hashtable.
+        states = capitals.keySet();//get set-view of keys
+        //将Properties()中的值通过keySet()存储在Set states中
+        Iterator itr = states.iterator();//获取迭代器
+        /*Java Iterator（迭代器）不是一个集合，它是一种用于访问集合的方法，可用于迭代 ArrayList 和 HashSet 等集合。
+        Iterator 是 Java 迭代器最简单的实现，ListIterator 是 Collection API 中的接口， 它扩展了 Iterator 接口。*/
+        while (itr.hasNext()){//输出集合中的所有元素
+            str = (String) itr.next();//str为迭代器中的元素
+            System.out.println("The capaital of "+str+" is "+capitals.getProperty(str)+".");
+            //str
+            //capitals.getProperty(str)通过getProperty方法搜索str对应的Properties()属性值，即输入的v
+        }
+        System.out.println();
+
+        //look for state not in list -- specify default
+        str = capitals.getProperty("Florida","Not Found");
+        //通过getProperty方法，将"Not Found"赋值给“Florida”
+        System.out.println("The capital of Florida is "+str+".");
+    }
+}

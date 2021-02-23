@@ -1,0 +1,31 @@
+package com.company;
+import java.util.BitSet;//JAVA Bitset类代码例子
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+        BitSet bits1 = new BitSet(16);//允许用户指定初始大小(该处为16)。所有位初始化为0
+        BitSet bits2 = new BitSet(16);
+        //set some bits
+        for(int i = 0;i<16;i++){
+            if((i%2)==0)    bits1.set(i);//将能被2整除的数添加进入bits1中
+            if ((i%5)!=0)   bits2.set(i);//将不能被5整除的数添加进入bits2中
+        }
+        System.out.println("Initial pattern in bits1: ");
+        System.out.println(bits1);//输出bits1{0, 2, 4, 6, 8, 10, 12, 14}
+        System.out.println("\nInitial pattern in bits2: ");
+        System.out.println(bits2);//{1, 2, 3, 4, 6, 7, 8, 9, 11, 12, 13, 14}
+        //AND bits
+        bits2.and(bits1);//找出同时存在于bits1和bits2的数.bits1和bits2中的内容进行与操作
+        System.out.println("\nbits2 AND bits1: ");
+        System.out.println(bits2);//输出{2, 4, 6, 8, 12, 14}（bits2的值在此处有变化，影响后面的逻辑运算）
+        //OR bits
+        bits2.or(bits1);//对此位 set 和位 set 参数执行逻辑或操作。
+        System.out.println("\nbits2 or bits1: ");
+        System.out.println(bits2);//输出{0, 2, 4, 6, 8, 10, 12, 14}
+        //XOR bits
+        bits2.xor(bits1);//对此位 set 和位 set 参数执行逻辑异或操作。
+        System.out.println("\nbits2 XOR bits1: ");
+        System.out.println(bits2);//输出{}
+    }
+}
