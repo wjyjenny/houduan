@@ -1,0 +1,19 @@
+package com.company;
+//Java ArrayList size() 方法
+//size() 方法用于返回动态数组中元素的数量。
+//size() 方法的语法为：
+//arraylist.size()
+import java.util.ArrayList;
+public class RunobTest6 {
+    public static void main(String[] args){
+        //创建一个动态数组
+        ArrayList<String> sites = new ArrayList<>();
+        sites.add("Google");
+        sites.add("Runoob");
+        sites.add("Taobao");
+        System.out.println("网站列表："+sites);
+        //得到数组中的元素个数
+        int size = sites.size();
+        System.out.println("动态数组长度："+size);
+    }
+}

@@ -1,0 +1,37 @@
+package com.company;
+//Java ArrayList indexOf() 方法
+//indexOf() 方法返回动态数组中元素的索引值。
+//indexOf() 方法的语法为：
+//arraylist.indexOf(Object obj)
+//astIndexOf() 方法返回指定元素在动态数组中最后一次出现的位置。
+//lastIndexOf() 方法的语法为：
+//arraylist.lastIndexOf(Object obj)
+import java.util.ArrayList;
+public class RunobTest3 {
+    public static void main(String[] args){
+        //创建一个数组
+        ArrayList<String> sites = new ArrayList<>();
+        sites.add("Google");
+        sites.add("Runoob");
+        sites.add("Taobao");
+        System.out.println("网站列表: " + sites);
+        //查找位置索引值为Taobao的元素
+        int position1 = sites.indexOf("Taobao");
+        System.out.println("Taobao的索引位置："+position1);// 元素存在于动态数组中，返回元素的位置
+        //查找位置索引值为Weibo的元素
+        int position2 = sites.indexOf("Weibo");
+        System.out.println("Weibo的索引位置："+position2);//元素存在动态数组中不存在，返回 -1
+        //获取元素第一次出现的位置：
+        sites.add("Runoob");
+        int position3 = sites.indexOf("Runoob");
+        System.out.println("网站列表: " + sites);
+        System.out.println("Runoob 的索引位置: " + position3);
+        // 获取 Runoob 最后一次出现的位置
+        int position4 = sites.lastIndexOf("Runoob");
+        System.out.println("Runoob 最后出现的位置: " + position4);
+
+        // Wiki 不在 arraylist 中返回 -1
+        int position5 = sites.lastIndexOf("Wiki");
+        System.out.println("Wiki 最后出现的位置: " + position5);
+    }
+}

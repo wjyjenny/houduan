@@ -1,0 +1,22 @@
+package com.company;
+//Java ArrayList removeAll() 方法
+//removeAll() 方法用于删除存在于指定集合中的动态数组元素。
+//removeAll() 方法的语法为：
+//arraylist.removeAll(Collection c);
+//注：arraylist 是 ArrayList 类的一个对象。
+import java.util.ArrayList;
+public class RunobTest4 {
+    public static void main(String[] args){
+        //创建一个数组
+        ArrayList<String> sites = new ArrayList<>();
+        sites.add("Google");
+        sites.add("Runoob");
+        sites.add("Taobao");
+        System.out.println("网站列表: " + sites);
+        //删除所有元素
+        sites.removeAll(sites);
+        //sites 作为 removeAll() 方法的参数。
+        //注意：clear() 是动态数组中删除所有元素的最好方法
+        System.out.println("所有removeAll()方法后："+sites);
+    }
+}

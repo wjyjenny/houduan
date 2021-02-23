@@ -1,0 +1,40 @@
+package com.company;
+//Java ArrayList remove() 方法
+//remove() 方法用于删除动态数组里的单个元素。
+//remove() 方法的语法为：
+//// 删除指定元素
+//arraylist.remove(Object obj)
+//// 删除指定索引位置的元素
+//arraylist.remove(int index)
+//注：arraylist 是 ArrayList 类的一个对象。
+import java.util.ArrayList;
+public class RunobTest5 {
+    public static void main(String[] args){
+        //创建一个数组
+        ArrayList<String> sites = new ArrayList<>();
+        sites.add("Google");
+        sites.add("Runoob");
+        sites.add("Taobao");
+        System.out.println("网站列表："+sites);
+        //删除元素Taobao
+        boolean result = sites.remove("Taobao");
+        System.out.println("Taobao是否被删除？"+result);
+        System.out.println("使用remove()后："+sites);
+        //再添加回来
+        sites.add("Taobao");
+        System.out.println("网站列表："+sites);
+        //删除位置索引为2的元素
+        String element = sites.remove(2);
+        System.out.println("使用remove()后："+sites);
+        System.out.println("移除的元素："+element);
+        //再添加回来
+        sites.add(2,"Taobao");
+        System.out.println("网站列表："+sites);
+        sites.add(0,"Taobao");
+        System.out.println("网站列表："+sites);
+        //删除第一次出现Taobao的元素
+        boolean result1 = sites.remove(String.valueOf("Taobao"));
+        System.out.println("13 是否被删除? " + result1);
+        System.out.println("使用 remove() 后: " + sites);
+    }
+}
