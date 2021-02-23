@@ -1,0 +1,24 @@
+package com.company;
+//Java ArrayList isEmpty() 方法
+//isEmpty() 方法用于判断动态数组是否为空。
+//isEmpty() 方法的语法为：
+//arraylist.isEmpty()
+//注：arraylist 是 ArrayList 类的一个对象。
+import java.util.ArrayList;
+public class RunobTest7 {
+    public static void main(String[] args){
+        //创建一个动态数组
+        ArrayList<String> sites = new ArrayList<>();
+        //检查数组中是否含有元素
+        boolean result = sites.isEmpty();//true
+        System.out.println("sites是否为空？"+result);
+        //添加
+        sites.add("Google");
+        sites.add("Runoob");
+        sites.add("Taobao");
+        System.out.println("网站列表："+sites);
+        //检查该数组是否为空
+        result = sites.isEmpty();//false
+        System.out.println("sites是否为空？"+result);
+    }
+}
