@@ -1,0 +1,24 @@
+package com.company;
+//Java ArrayList clear() 方法
+import java.util.ArrayList;
+public class RunoobTest4 {
+    public static void main(String[] args){
+        //创建一个数组
+        ArrayList<String> sites = new ArrayList<>();
+        sites.add("Google");
+        sites.add("Runoob");
+        sites.add("Taobao");
+        System.out.println("网站列表："+sites);
+        //clear()删除所有元素
+        sites.clear();
+        System.out.println("所有clear()方法后： "+sites);
+        //removeAll()方法删除数组中的所有元素
+        //创建一个动态数组
+        ArrayList<Integer> oddNumbers = new ArrayList<>();
+        //往动态数组里面添加元素
+        oddNumbers.add(1);
+        oddNumbers.add(3);
+        oddNumbers.add(5);
+        System.out.println("奇数ArrayList: ");
+    }
+}
