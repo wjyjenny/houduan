@@ -1,0 +1,37 @@
+package com.company;
+import java.util.*;
+//遍历 Map
+public class Test {
+    public static void main(String[] args){
+        Map<String,String> map = new HashMap<String,String>();
+        map.put("1","value1");
+        map.put("2","value2");
+        map.put("3","value3");
+        //第一种：普遍使用，二次取值
+        System.out.println("通过Map.keySet遍历key和value:");
+        for(String key : map.keySet()){//keySet()	返回map中所有 key 组成的集合视图。
+            System.out.println("key= "+key+" and value= "+map.get(key));
+        }
+        //第二种
+        /*Map.Entry是Map接口中的一个内部接口，这个接口的对象中包含了K和V；
+          获取K的方式是Map.Entry对象名.getKey()，获取V的方式是Map.Entry对象名.getValue();
+          通过Map获取Map.Entry的方式是map.entrySet()*/
+        System.out.println("通过Map.entrySet使用iterator遍历key和value:");
+        Iterator<Map.Entry<String,String>> it = map.entrySet().iterator();//新建迭代器it，遍历map.entrySet()元素,entrySet()	返回map中所有映射项的集合集合视图。
+        while (it.hasNext()){
+            Map.Entry<String,String> entry = it.next();//将it中的下一个元素值定义为entry
+            System.out.println("key= "+entry.getKey()+" and value= "+entry.getValue());
+        }
+        //第三种：推荐，尤其是容量大时
+        System.out.println("通过Map.values()遍历所有的values,但不能遍历key");
+        for(Map.Entry<String,String> entry : map.entrySet()){//map.entrySet()遍历元素
+            System.out.println("key= "+entry.getKey()+" and value= "+entry.getValue());
+        }
+        //第四种
+        //通过Map.values()遍历所有的value,但不能遍历key
+        System.out.println("通过Map.values()遍历所有的value,但不能遍历key");
+        for(String v : map.values()){
+            System.out.println("value= "+v);
+        }
+    }
+}
