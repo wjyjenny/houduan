@@ -1,0 +1,31 @@
+package com.company;
+//Java ArrayList get() 方法
+//get() 方法通过索引值获取动态数组中的元素。
+//get() 方法的语法为：
+//arraylist.get(int index)
+import java.util.ArrayList;
+public class RunobTest2 {
+    public static void main(String[] args){
+        //创建一个数组
+        ArrayList<String> sites = new ArrayList<>();
+        sites.add("Google");
+        sites.add("Runoob");
+        sites.add("Taobao");
+        System.out.println("网站列表: " + sites);
+        //获取在索引值为1的位置的元素
+        String element = sites.get(1);
+        System.out.println("索引值为1的元素为："+element);
+
+        //Integer 类型的动态数组使用 get() 方法:
+        //创建一个新的数组
+        ArrayList<Integer> numbers = new ArrayList<>();
+        //往数组里面插入元素
+        numbers.add(22);
+        numbers.add(13);
+        numbers.add(35);
+        System.out.println("Numbers ArrayList:"+numbers);
+        //返回索引值为2的元素
+        int element1 = numbers.get(2);
+        System.out.println("索引值为2的元素为："+element1);
+    }
+}

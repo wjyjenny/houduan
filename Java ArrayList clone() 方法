@@ -1,0 +1,21 @@
+package com.company;
+//Java ArrayList clone() 方法
+import java.util.ArrayList;
+public class RunobTest {
+    public static void main(String[] args){
+        //创建一个数组
+        ArrayList<String> sites = new ArrayList<>();
+        sites.add("Google");
+        sites.add("Runoob");
+        sites.add("Taobao");
+        System.out.println("网站列表： "+sites);
+        //对sites进行拷贝
+        //(ArrayList<String>)sites.clone();
+        //sites.clone() - 返回所拷贝的 sites 对象
+        //(ArrayList <String>) - 返回的值转变成一个 String 类型的动态数组
+        ArrayList<String> cloneSites = (ArrayList<String>) sites.clone();
+        System.out.println("拷贝ArrayList: "+cloneSites);
+        //输出clone()方法所返回的值
+        System.out.println("clone() 返回值："+sites.clone());
+    }
+}
