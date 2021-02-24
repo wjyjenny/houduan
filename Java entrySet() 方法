@@ -1,0 +1,44 @@
+package com.company;
+//entrySet() 方法返回映射中包含的映射的 Set 视图。
+//entrySet() 方法的语法为：
+//hashmap.entrySet()
+//注：hashmap 是 HashMap 类的一个对象。
+//
+//返回值
+//返回此映射中包含的映射的 Set 视图。
+//注意：Set 视图意思是 HashMap 中所有的键值对都被看作是一个 set 集合。
+import java.util.HashMap;
+import java.util.Map.Entry;
+public class RunobTest21 {
+    public static void main(String[] args) {
+        // 创建一个 HashMap
+        HashMap<Integer, String> sites = new HashMap<>();
+
+        // 往 HashMap 添加一些元素
+        sites.put(1, "Google");
+        sites.put(2, "Runoob");
+        sites.put(3, "Taobao");
+        System.out.println("sites HashMap: " + sites);
+
+        // 返回映射关系中 set view
+        System.out.println("Set View: " + sites.entrySet());
+
+        //entrySet() 方法可以与 for-each 循环一起使用，用来遍历迭代 HashMap 中每一个映射项。
+        // 创建一个HashMap
+        HashMap<String, Integer> numbers = new HashMap<>();
+        numbers.put("One", 1);
+        numbers.put("Two", 2);
+        numbers.put("Three", 3);
+        System.out.println("HashMap: " + numbers);
+
+        // 访问 HashMap 中的每一个映射项
+        System.out.print("Entries: ");
+
+        // entrySet()返回了 HashMap 中所有映射项的一个 set 集合视图
+        // for-each loop 在该视图中访问了每一映射项
+        for(Entry<String, Integer> entry: numbers.entrySet()) {
+            System.out.print(entry);
+            System.out.print(", ");
+        }
+    }
+}

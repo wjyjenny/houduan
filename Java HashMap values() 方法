@@ -1,0 +1,34 @@
+package com.company;
+//Java HashMap values() 方法
+//values() 方法返回映射中所有 value 组成的 Set 视图。
+//values() 方法的语法为：
+//hashmap.values()
+//注：hashmap 是 HashMap 类的一个对象。
+
+import java.util.HashMap;
+
+public class RunobTest23 {
+    public static void main(String[] args) {
+        // 创建一个 HashMap
+        HashMap<Integer, String> sites = new HashMap<>();
+
+        // 往 HashMap 添加一些元素
+        sites.put(1, "Google");
+        sites.put(2, "Runoob");
+        sites.put(3, "Taobao");
+        System.out.println("sites HashMap: " + sites);
+
+        // 返回所有value值组成的视图
+        System.out.println("Values: " + sites.values());
+
+        // 访问 HashMap 中所有的 value
+        System.out.print("Values: ");
+
+        // values() 返回所有 value 的一个视图
+        // for-each 循环可以 从view中访问每一个value值
+        for(String value: sites.values()) {
+            // 输出每一个value
+            System.out.print(value + ", ");
+        }
+    }
+}
