@@ -1,0 +1,36 @@
+package com.company;
+//Java Object getClass() 方法
+//Java String类Java Object 类
+//Object getClass() 方法用于获取对象的运行时对象的类。
+//语法
+//object.getClass()
+//参数
+//无 。
+//返回值
+//返回对象的类。
+//实例
+//以下实例演示了 getClass() 方法的使用，String 和 ArrayList 继承了 Object，所以可以直接使用 getClass() 方法：
+import java.util.ArrayList;
+public class RunobTest30 {
+    public static void main(String[] args) {
+
+        // getClass() with Object
+        Object obj1 = new Object();
+        System.out.println("obj1 的类为: " + obj1.getClass());
+
+        // getClass() with String
+        String obj2 = new String();
+        System.out.println("obj2 的类为: " + obj2.getClass());
+
+        // getClass() with ArrayList
+        ArrayList<Integer> obj3 = new ArrayList<>();
+        System.out.println("obj3 的类为: " + obj3.getClass());
+
+        // 创建 RunobTest30 类的对象
+        RunobTest30 obj = new RunobTest30();
+
+        // RunoobTest 继承 Object 类，Object 是所有类的超类
+        // 调用 getClass() 方法
+        System.out.println(obj.getClass());
+    }
+}
