@@ -1,0 +1,48 @@
+package com.company;
+//Java ArrayList removeIf() 方法
+//removeIf() 方法用于删除所有满足特定条件的数组元素。
+//removeIf() 方法的语法为：
+//arraylist.removeIf(Predicate<E> filter)
+//注：arraylist 是 ArrayList 类的一个对象。
+//参数说明：
+//filter - 过滤器，判断元素是否要删除
+//返回值
+//如果元素被删除则返回 true。
+
+import java.util.*;
+
+public class RunobTest19 {
+    public static void main(String[] args){
+
+        // 创建一个动态数组
+        ArrayList<String> sites = new ArrayList<>();
+
+        sites.add("Google");
+        sites.add("Runoob");
+        sites.add("Taobao");
+
+        System.out.println("ArrayList : " + sites);
+
+        // 删除名称中带有 Tao 的元素
+        sites.removeIf(e -> e.contains("Tao"));
+        //e -> e.contains("land") 如果元素中包含 "land"，则返回 true
+        //removeIf() 如果 e -> e.contains("land") 返回 true 则删除该元素。
+        System.out.println("删除后的 ArrayList: " + sites);
+
+        // 创建一个数组
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        // 往数组中插入元素
+        numbers.add(1);
+        numbers.add(2);
+        numbers.add(3);
+        numbers.add(4);
+        numbers.add(5);
+        numbers.add(6);
+        System.out.println("Numbers: " + numbers);
+
+        // 删除所有偶数元素
+        numbers.removeIf(e -> (e % 2) == 0);;
+        System.out.println("Odd Numbers: " + numbers);
+    }
+}
