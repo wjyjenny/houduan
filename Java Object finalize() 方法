@@ -1,0 +1,32 @@
+package com.company;
+//Java Object finalize() 方法
+//Object finalize() 方法用于实例被垃圾回收器回收的时触发的操作。
+//
+//当 GC (垃圾回收器) 确定不存在对该对象的有更多引用时，对象的垃圾回收器就会调用这个方法。
+//语法
+//protected void finalize()
+//参数
+//无 。
+//
+//返回值
+//没有返回值。
+import java.util.*;
+public class RunobTest29 extends GregorianCalendar{
+    public static void main(String[] args){
+        try {
+            // 创建 RunobTest29 对象
+            RunobTest29 cal = new RunobTest29();
+
+            // 输出当前时间
+            System.out.println("" + cal.getTime());
+
+            // finalize cal
+            System.out.println("Finalizing...");
+            cal.finalize();
+            System.out.println("Finalized.");
+
+        } catch (Throwable ex) {
+            ex.printStackTrace();
+        }
+    }
+}
