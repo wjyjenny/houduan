@@ -1,0 +1,39 @@
+package com.company;
+//Java ArrayList replaceAll() 方法
+//replaceAll() 方法用于将给定的操作内容替换掉数组中每一个元素。
+//replaceAll() 方法的语法为：
+//arraylist.replaceAll(UnaryOperator<E> operator)
+//注：arraylist 是 ArrayList 类的一个对象。
+//参数说明：
+//operator - 要替换到动态数组的元素或者一系列操作
+import java.util.*;
+public class RunobTest18 {
+    public static void main(String[] args){
+
+        // 创建一个动态数组
+        ArrayList<String> sites = new ArrayList<>();
+
+        sites.add("Google");
+        sites.add("Runoob");
+        sites.add("Taobao");
+
+        System.out.println("ArrayList : " + sites);
+
+        // 将所有元素更改为大写
+        sites.replaceAll(e -> e.toUpperCase());//用e.toUpperCase()来代替原有的元素e
+        System.out.println("更新后的 ArrayList: " + sites);
+
+        // 创建一个动态数组
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        // 往数组中添加元素
+        numbers.add(1);
+        numbers.add(2);
+        numbers.add(3);
+        System.out.println("ArrayList: " + numbers);
+        // 所有元素乘以 2
+        numbers.replaceAll(e -> e * 2);;//用e*2来代替原有的元素e
+        //replaceAll() - 用 e -> e * 2 的计算结果替换数组中的元素 。
+        System.out.println("更新后的 ArrayList: " + numbers);
+    }
+}
