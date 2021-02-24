@@ -1,0 +1,36 @@
+package com.company;
+//Java Object 类
+//Java Object 类是所有类的父类，也就是说 Java 的所有类都继承了 Object，子类可以使用 Object 的所有方法。
+//Object 类位于 java.lang 包中，编译时会自动导入，我们创建一个类时，如果没有明确继承一个父类，那么它就会自动继承 Object，成为 Object 的子类。
+//
+//Object 类可以显示继承，也可以隐式继承，以下两种方式时一样的：
+//显示继承:
+//public class Runoob extends Object{
+//}
+//隐式继承:
+//public class Runoob {
+//}
+public class RunobTest27 implements Cloneable{
+    //声明变量
+    String names;
+    int likes;
+    public static void main(String[] args){
+        //创建对象
+        RunobTest27 obj1 = new RunobTest27();
+        //初始化变量
+        obj1.names = "Runoob";
+        obj1.likes = 111;
+        //打印输出
+        System.out.println(obj1.names);
+        System.out.println(obj1.likes);
+        try{
+            //创建obj1的拷贝
+            RunobTest27 obj2 = (RunobTest27) obj1.clone();
+            //使用obj2输出变量
+            System.out.println(obj2.names);
+            System.out.println(obj2.likes);
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
+}
