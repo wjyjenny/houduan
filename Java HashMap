@@ -1,0 +1,162 @@
+package com.company;
+//Java HashMap
+//HashMap 是一个散列表，它存储的内容是键值对(key-value)映射。
+//HashMap 实现了 Map 接口，根据键的 HashCode 值存储数据，具有很快的访问速度，最多允许一条记录的键为 null，不支持线程同步。
+//HashMap 是无序的，即不会记录插入的顺序。
+//HashMap 继承于AbstractMap，实现了 Map、Cloneable、java.io.Serializable 接口。
+//
+//HashMap 类位于 java.util 包中，使用前需要引入它，语法格式如下：
+//import java.util.HashMap; // 引入 HashMap 类
+//以下实例我们创建一个 HashMap 对象 Sites， 整型（Integer）的 key 和字符串（String）类型的 value：
+//HashMap<Integer, String> Sites = new HashMap<Integer, String>();
+import java.util.HashMap;//引入 HashMap 类
+public class Hash2 {
+    public static void main(String[] args) {
+        // 创建 HashMap 对象 Sites
+        HashMap<Integer, String> Sites = new HashMap<Integer, String>();
+        // 添加键值对----添加键值对(key-value)可以使用 put() 方法:
+        Sites.put(1, "Google");
+        Sites.put(2, "Runoob");
+        Sites.put(3, "Taobao");
+        Sites.put(4, "Zhihu");
+        System.out.println(Sites);
+
+        // putAll() 方法的使用：
+        // 创建另一个 HashMap
+        HashMap<Integer, String> Sites2 = new HashMap<>();
+        Sites2.put(1, "Weibo");  // 已存在会被替换
+        Sites2.put(4, "Wiki");
+        // 将所有的映射关系从 sites 添加到 sites2
+        Sites2.putAll(Sites);
+        System.out.println("sites2 HashMap: " + Sites2);
+
+        // 添加重复的key元素
+        String value = Sites.put(1, "Weibo");
+        System.out.println("修改后的 HashMap: " + Sites);
+
+        //putIfAbsent() 方法会先判断指定的键（key）是否存在，不存在则将键/值对插入到 HashMap 中。
+        //putIfAbsent() 方法的语法为：
+        //hashmap.putIfAbsent(K key, V value)
+        // HashMap 不存在该key
+        Sites.putIfAbsent(4, "Weibo");
+        // HashMap 中存在 Key
+        Sites.putIfAbsent(2, "Wiki");
+        System.out.println("Updated Languages: " + Sites);
+
+        // 查看所代替的值
+        System.out.println("替换的值: " + value);
+
+        // 获得该 HashMap 中键/值对映射的数量
+        int size = Sites.size();
+        System.out.println("Size of HashMap: " + size);
+
+        //可以使用 get(key) 方法来获取 key 对应的 value:
+        System.out.println(Sites.get(3));
+
+        //可以使用 remove(key) 方法来删除 key 对应的键值对(key-value):
+        System.out.println(Sites);
+        Sites.remove(4);
+        System.out.println(Sites);
+
+        //要计算 HashMap 中的元素数量可以使用 size() 方法：
+        System.out.println(Sites.size());
+
+        //使用 for-each 来迭代 HashMap 中的元素。
+        // 输出 key 和 value
+        for (Integer i : Sites.keySet()) {
+            System.out.println("key: " + i + " value: " + Sites.get(i));
+        }
+        // 返回所有 value1 值
+        for(String value1: Sites.values()) {
+            // 输出每一个value
+            System.out.print(value1 + ", ");
+        }
+
+        // clone复制 sites
+        HashMap<Integer, String> cloneSites = (HashMap<Integer, String>)Sites.clone();
+        System.out.println("Cloned HashMap: " + cloneSites);
+        // 输出clone()方法的返回值
+        System.out.println("Return value of clone(): " + Sites.clone());
+
+        //删除所有键值对(key-value)可以使用 clear 方法：
+        Sites.clear();
+        System.out.println(Sites);
+
+        //检查该 HashMap 是否含有元素
+        boolean result = Sites.isEmpty(); // true
+        System.out.println("是否为空? " + result);
+
+        // 创建 HashMap 对象 Sites
+        HashMap<String, String> Sites1 = new HashMap<String, String>();
+        // 添加键值对
+        Sites1.put("one", "Google");
+        Sites1.put("two", "Runoob");
+        Sites1.put("three", "Taobao");
+        Sites1.put("four", "Zhihu");
+        System.out.println(Sites1);
+
+        // containsKey() 方法的使用
+        //检查 key 为 1 是否存在
+        if(Sites1.containsKey(1)) {
+            System.out.println("key 为 1 存在于 sites 中");
+        }
+        if(Sites1.containsKey("one")) {
+            System.out.println("key 为 one 存在于 sites 中");
+        }
+        //检查 key 为 4 是否存在，不存在插入该 key/value 对
+        // 使用 ! 符号来对布尔结果取相反的值
+        if(!Sites1.containsKey("five")) {
+            Sites1.put("five", "Wiki");
+        }
+        System.out.println("Updated sites HashMap: " + Sites1);
+
+        //containsValue() 方法
+        //检查映射中值value是否有Java
+        if(Sites1.containsValue("Runoob")) {
+            System.out.println("Runoob 存在于 Sites1 中");
+        }
+        // 检查 value 为 Wiki 是否存在，不存在插入该 key/value 对
+        // 使用 ! 符号来对布尔结果取相反的值
+        if(!Sites1.containsValue("Wiki")) {
+            Sites1.put("six", "Wiki");
+        }
+        System.out.println("Updated sites HashMap: " + Sites1);
+
+        // replace() 方法
+        // 替换key为2的映射
+        String value2 = Sites1.replace("two", "Wiki");
+        System.out.println("Replaced Value: " + value2);
+        System.out.println("Updated HashMap: " + Sites1);
+        // 替换映射关系{1 = Google}，执行替换
+        Sites1.replace("one", "Google", "Wiki");  // 返回 true
+        // 不存在映射关系{2 = Weibo}，没有任何操作
+        Sites1.replace("two", "Weibo", "Zhihu");  // 返回 false
+        System.out.println("sites after replace():\n" + Sites1);
+
+        // replaceAll() 方法将所有的值更改为大写
+        Sites1.replaceAll((key, value3) -> value3.toUpperCase());
+        System.out.println("Updated HashMap: " + Sites1);
+
+        // 创建一个 HashMap
+        HashMap<Integer, Integer> numbers = new HashMap<>();
+        // i往HashMap中添加映射
+        numbers.put(5, 0);
+        numbers.put(8, 1);
+        numbers.put(9, 2);
+        System.out.println("HashMap: " + numbers);
+
+        // 用key的平方替换所有的值
+        numbers.replaceAll((key1, value4) -> key1 * key1);;
+        System.out.println("Updated HashMap: " + numbers);
+
+        //Java HashMap getOrDefault() 方法
+        // key 的映射存在于 HashMap 中
+        // Not Found - 如果 HashMap 中没有该 key，则返回默认值
+        String value4 = Sites1.getOrDefault(1, "Not Found");
+        System.out.println("Value for key 1:  " + value4);
+        // key 的映射不存在于 HashMap 中
+        // Not Found - 如果 HashMap 中没有该 key，则返回默认值
+        String value5 = Sites1.getOrDefault(4, "Not Found");
+        System.out.println("Value for key 4: " + value5);
+    }
+}
