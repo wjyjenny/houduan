@@ -1,0 +1,38 @@
+package com.company;
+//Java ArrayList trimToSize() 方法
+//trimToSize() 方法用于将动态数组中的容量调整为数组中的元素个数。
+//trimToSize() 方法的语法为：
+//arraylist.trimToSize();
+//注：arraylist 是 ArrayList 类的一个对象。
+//返回值
+//没有返回值，仅更改 arraylist 的容量。
+import java.util.ArrayList;
+public class RunobTest16 {
+    public static void main(String[] args){
+
+        // 创建一个动态数组
+        ArrayList<String> sites = new ArrayList<>();
+
+        sites.add("Google");
+        sites.add("Runoob");
+        sites.add("Taobao");
+
+        System.out.println("ArrayList : " + sites);
+
+        // 调整容量为3
+        sites.trimToSize();
+        System.out.println("ArrayList 大小: " + sites.size());
+    }
+}
+//ArrayList trimToSize() 的优点
+//我们知道 ArrayList 的容量是动态变化的。那么使用 ArrayList trimToSize() 方法的好处是什么？
+//
+//要了解 trimToSize() 方法的优势，我们需要研究 ArrayList 内部的工作原理。
+//
+//ArrayList 的内部使用数组存储元素，当数组将被存满，就会创建一个新数组，其容量是当前数组的 1.5 倍。
+//
+//同时，所有元素都将移至新数组，假设内部数组已满，而我们现在又添加了 1 个元素，ArrayList 容量就会以相同的比例扩展（即前一个数组的1.5倍）。
+//
+//在这种情况下，内部数组中将有一些未分配的空间。
+//
+//这时，trimToSize() 方法可以删除未分配的空间并更改 ArrayList 的容量，使其等于 ArrayList 中的元素个数。

@@ -1,0 +1,65 @@
+package com.company;
+//Java ArrayList containsAll() 方法
+//containsAll() 方法用于检测 arraylist 是否包含指定集合中的所有元素。。
+//containsAll() 方法的语法为：
+//arraylist.containsAll(Collection c);
+//注：arraylist 是 ArrayList 类的一个对象。
+//返回值
+//如果动态数组中包含的集合中的所有元素，则返回 true。
+//如果 arraylist 中存在的元素与指定 collection 中的元素不兼容，则抛出 ClassCastException。
+//如果 collection 中包含 null 元素，并且 arraylist 中不允许 null值，则抛出 NullPointerException 异常。
+//注意：可以这样理解， containsAll() 方法检查了 collection 是否是动态数组中的一个子集。
+import java.util.ArrayList;
+import java.util.HashSet;
+public class RunobTest15 {
+    public static void main(String[] args){
+
+        // 创建一个动态数组
+        ArrayList<String> sites = new ArrayList<>();
+        sites.add("Google");
+        sites.add("Runoob");
+        sites.add("Taobao");
+        System.out.println("ArrayList 1: " + sites);
+
+        // 创建另一个动态数组
+        ArrayList<String> sites2 = new ArrayList<>();
+        // 往动态数组中添加元素
+        sites2.add("Runoob");
+        sites2.add("Google");
+        System.out.println("ArrayList 2: " + sites2);
+
+        // 检查动态数组1是否包含动态数组2
+        boolean result1 = sites.containsAll(sites2);
+        System.out.println("ArrayList 1 包含了 ArrayList 2 的所有元素: " + result1);
+        // 检查数组2是否包含数组1
+        boolean result2 = sites2.containsAll(sites);
+        System.out.println("ArrayList 2 包含了 ArrayList 1 的所有元素: " + result2);
+        //containsAll() 方法检查 sites 中是否包含 sites2 中的所有元素，元素是包含的，返回 true。
+        //containsAll() 方法检查 sites2 中是否包含 sites 中的所有元素，元素是不包含的，返回 false。
+        System.out.println();
+
+
+        //Java ArrayList 和 HashSet 之间的 containsAll() 方法,同理
+        // 创建一个数组
+        ArrayList<Integer> numbers = new ArrayList<>();
+        // 往数组中插入元素
+        numbers.add(1);
+        numbers.add(2);
+        numbers.add(3);
+        System.out.println("ArrayList: " + numbers);
+
+        //创建一个 HashSet
+        HashSet<Integer> primeNumbers = new HashSet<>();
+        // 往HashSet中添加元素
+        primeNumbers.add(2);
+        primeNumbers.add(3);
+        System.out.println("HashSet: " + primeNumbers);
+
+        // 检查 ArrayList 中是否包含 HashSet 的所有元素
+        boolean result3 = numbers.containsAll(primeNumbers);
+        System.out.println("ArrayList 是否 HashSet 中的所有元素: " + result3);
+        // 检查 HashSet 中是否包含 ArrayList 的所有元素
+        boolean result4 = primeNumbers.containsAll(numbers);
+        System.out.println("HashSet 是否 ArrayList 中的所有元素: " + result4);
+    }
+}
