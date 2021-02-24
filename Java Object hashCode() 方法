@@ -1,0 +1,46 @@
+package com.company;
+//Java Object hashCode() 方法
+//Object hashCode() 方法用于获取对象的 hash 值。
+//
+//语法
+//object.hashCode()
+//参数
+//无 。
+//
+//返回值
+//返回对象哈希值，是一个整数，表示在哈希表中的位置。
+import java.util.ArrayList;
+public class RunobTest31 {
+    public static void main(String[] args) {
+        //演示了 hashCode() 方法的使用：
+        // Object 使用 hashCode()
+        Object obj1 = new Object();
+        System.out.println(obj1.hashCode());
+
+        Object obj2 = new Object();
+        System.out.println(obj2.hashCode());
+
+        Object obj3 = new Object();
+        System.out.println(obj3.hashCode());
+
+        //String 和 ArrayList 类使用 hashCode() 方法，String 和 ArrayList 类都继承了 Object，所以可以直接使用 hashCode() 方法：
+        // String 使用 hashCode()
+        String str = new String();
+        System.out.println(str.hashCode()); // 0
+
+        // ArrayList 使用 hashCode()
+        ArrayList<Integer> list = new ArrayList<>();
+        System.out.println(list.hashCode()); // 1
+
+        //如果两个对象相等，则它们的哈希值也是相等的：
+        // Object 使用 hashCode()
+        Object obj11 = new Object();
+        // obj1 赋值给 obj2
+        Object obj21 = obj11;
+        // 判断两个对象是否相等
+        System.out.println(obj11.equals(obj21)); // true
+        // 获取 obj1 与 obj2 的哈希值
+        System.out.println(obj11.hashCode()); // 1735600054
+        System.out.println(obj21.hashCode()); // 1735600054
+    }
+}
